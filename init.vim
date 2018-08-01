@@ -1,3 +1,9 @@
+" Plugins
+call plug#begin()
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'itchyny/lightline.vim'
+call plug#end()
+
 set nocompatible      " We're running Vim, not Vi!
 set hidden 
 set nobackup          " no backup files
@@ -13,6 +19,24 @@ set showcmd           " Display incomplete commands
 set visualbell
 set ruler             " mostrar la regla que indica fila/columna
 set relativenumber " relative line numbering
+set cursorline        " highlight cursor line
+set laststatus=2
+
+
+" Color scheme
+set background=dark
+colorscheme palenight
+g:lightline.colorscheme='palenight'
+
+inoremap jj <ESC> " alternative way to <ESC>.
+
+" Searching
+set ignorecase
+set smartcase          " if uppercase in search does case sensitive search
+set incsearch
+set showmatch
+set hlsearch
+nnoremap <leader><space> :noh<cr> " removes highlighted matches
 
 " spell 
 set spell spelllang=ca,en_us
